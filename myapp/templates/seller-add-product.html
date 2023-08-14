@@ -1,0 +1,90 @@
+{% extends 'seller-header.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+</head>
+
+<body>
+
+
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Add Product</h1>
+					<nav class="d-flex align-items-center">
+						<a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
+						<a href="category.html">Login/Register</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+	<!--================Login Box Area =================-->
+	<section class="login_box_area section_gap">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-lg-6">
+					<div class="login_form_inner">
+						<h3>Add Product</h3>
+                        {% if msg %}
+                            <b style="color: blue;">{{msg}}</b>
+                        {% endif %}    
+						<form class="row login_form" action="{% url 'seller-add-product' %}" method="post" enctype="multipart/form-data" >
+                            {% csrf_token %}
+
+							<div class="col-md-12 form-group">
+								<select name="product_brand" class="form-control">
+									<option>---Select product Brand---</option>
+									<option value="Puma">Puma</option>
+									<option value="nike">nike</option>
+									<option value="adidas">adidas</option>
+									<option value="bata">bata</option>
+
+
+								</select>
+							</div>	
+
+							<div class="col-md-12 form-group">
+								<input type="text" class="form-control" id="name" name="product_price" placeholder="Product Price" >
+							</div>
+							<div class="col-md-12 form-group">
+								
+                                <select name="product_size" class="form-control">
+									<option>---Select product Size---</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+
+
+								</select>
+                            </div>
+							
+							<div class="col-md-12 form-group">
+                                <input type="file" name="product_pic">
+								
+							</div>
+							<div class="col-md-12 form-group">
+								<button type="submit" value="submit" class="primary-btn">Add Product</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Login Box Area =================-->
+
+</body>
+
+</html>
+{% endblock %} 
