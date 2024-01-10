@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-gy#@aoilokp@)#q*06_pe9)h(y=j1k6pb-5706v&2gaadftipn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com','localhost','mysite.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com','localhost','.vercel.app','.now.sh']
 
 SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -133,3 +133,9 @@ MEDIA_URL = '/media/'
 
 STRIPE_PUBLIC_KEY='pk_test_51NclJ6SGNql2sOnD6eIDRseCdDYdovEukyjRTkEoYJGlKtNc3NO9IjSuowqeCye3f1g3mcMCIGVq3BR1sP3DFn4o007j2akWj4'
 STRIPE_PRIVATE_KEY='sk_test_51NclJ6SGNql2sOnDO8x9X3pMVrtay5EheSpy3jFwcnKFs62LdDSq1PRnbwuMMQ6JCirgP3iNM76uED5O7TvcfMvN00Pv5NNVpg'
+
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+import os 
+STATCFILES_DIRS = os.path.join(BASE_DIR,'static'),
+STATIC_ROOT = os.pardir.join(BASE_DIR,'staticfiles_build','static')
